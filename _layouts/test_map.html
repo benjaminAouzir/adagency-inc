@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/my_styles.css"> <!-- Liaison au fichier CSS externe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Carte</title>
+    <!-- leafletjs CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
+    <!-- leafletjs JS -->
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+    <script src="../assets/js/scripts.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+
+<body>
+
+        <!-- Section d'introduction -->
+        <div class="intro-section">
+
+            <!-- Contenu textuel de l'introduction -->
+
+            <div class="left">
+                <p style="font-family: 'Monoton', sans-serif; font-size: 65px; text-align: center; margin: 0; animation: slideDescend 2s ease-in-out; z-index: 5;">
+                    ADA CASTING
+                </p>
+
+                <div class="img-logo">
+                    <img src="../assets/img/film_pellicle.jpg" alt="logo"/>
+                </div>
+               
+            </div>
+            <div class="right">
+            <div class="intro-content">
+                <h1>AdaCasting </h1> <!-- Titre principal -->
+                <h2>Where Your Role Finds its Ada-ctor ! </h2>
+            </div>
+
+
+            <div class="intro-content_l"> <!-- Titre principal -->
+                <p>Cinema, a dimension where dreams come to life and every image tells a captivating story!</P>
+                    <p> It's a world where spotlights light up not only the screen, but also the hearts and minds of audiences the world over.</P>
+                </P> And its industry is a market that's not about to die, and you're about to make your mark in this lucrative industry!.</p> <!-- Description du projet -->
+            </div>
+
+            </div>
+            <!-- Indicateur de défilement -->
+            <div class="scroll-down">
+                <p>↓ APPUIE ICI</p>
+            </div>
+        </div>
+    
+    
+    
+    
+    
+    
+        <!-- Le reste du contenu sera ajouté dans les étapes suivantes -->
+    
+        <!-- Section pour les caractéristiques d'un acteur réussi -->
+        <section class="actor-features">
+
+
+            <div class="left" style="flex: 0.8;margin-left: 50px;">
+
+                <p>Le monde incroyable du cinéma se démarque par sa diversité extraordinaire de genres, offrant ainsi aux acteurs une myriade de choix excitants à explorer!</p>
+                <p> Des émotions intenses des drames aux éclats de rire des comédies, en passant par l'adrénaline palpitante des films d'action, chaque genre offre une expérience unique pour les acteurs 🎬✨.</p>
+                <ul>
+                    <li><strong>17 genres différents ! </strong></li>
+                    <li><strong>Une dizaine de milliers de films répartis dans ces genres</strong></li>
+                    <li><strong>Et une industrie qui gravitent autour de 9 genres majeurs</strong></li>
+                </ul>
+
+
+            </div>
+
+
+            <div class="right" >
+
+                <h2 style="text-align: center;">Variété de Genre : Les genres majeurs du cinéma !</h2>
+
+
+                <div class="doughnut">
+
+                    <canvas id="myChart"></canvas>
+
+                </div>
+
+            </div>
+            
+            
+
+        </section>
+
+
+
+
+        <section class="Countriy-feature">
+
+            <div class="left" style="flex: 1.7">
+
+                <h2>Le Monde du Cinéma en Carte : Une Diversité de Films Épars sur Tous les Continents</h2>
+
+                <div id="regions_div" style="width: 700px; height: 400px; margin: auto;">></div>
+
+            </div>
+        
+            <div class="right" style="margin-left: 20px;">
+
+
+
+                <p>La sphère cinématographique, riche en diversité culturelle, transcende les frontières nationales pour offrir aux acteurs une expérience captivante.</p>
+
+                <p>Chaque lieu de production contribue à une expérience distinctive, enrichissant le répertoire des acteurs et élargissant les horizons de l'industrie du cinéma. 🌍🎥✨</p>
+
+                <ul>
+                    <li><strong> 25 pays ! </strong></li>
+                    <li><strong>4 acteurs majeurs !</strong></li>
+                
+                </ul>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+        <section class="decades-feature">
+
+            <div class="left">
+
+            <h2>Exploration Cinématographique Année par Année : Une Pléthore de Choix Cinématographiques !</h2>
+            <p>Le monde incroyable du cinéma se démarque par sa diversité extraordinaire de genres, offrant ainsi aux acteurs une myriade de choix excitants à explorer!</p>
+            <p> Des émotions intenses des drames aux éclats de rire des comédies, en passant par l'adrénaline palpitante des films d'action, chaque genre offre une expérience unique pour les acteurs 🎬✨.</p>
+            <ul>
+                <li><strong>17 genres différents ! </strong></li>
+                <li><strong>Une dizaine de milliers de films répartis dans ces genres</strong></li>
+                <li><strong>Et une industrie qui gravitent autour de 9 genres majeurs</strong></li>
+            </ul>
+
+        </div>            
+
+
+            <div class="right" >
+
+                <h2 style="text-align: center;">Les films à travers les décennies !</h2>
+
+
+                <div class="bar-container">
+
+                    <canvas id="barChart"></canvas>
+                </div> 
+
+
+            </div>
+            
+
+        </section>
+
+    
+    
+
+
+
+  
+
+
+</body>
+
+</html>
