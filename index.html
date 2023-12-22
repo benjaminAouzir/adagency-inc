@@ -1,183 +1,519 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
+
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/my_styles.css"> <!-- Liaison au fichier CSS externe -->
+
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <title>Carte</title>
+    <title>ADAgency - Home</title>
+
     <!-- leafletjs CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
-    <!-- leafletjs JS -->
 
     <!-- Load d3.js -->
     <script src="https://d3js.org/d3.v4.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
-    <script src="assets/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wordcloud2.js/1.0.7/wordcloud2.min.js"></script>
+    <script src="assets/js/script_index.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-heatmap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+
+    <!-- Add the tab logo -->
+    <link rel="icon" href="assets/img/logo_ai.png" type="image/x-icon">
 
 </head>
 
+
 <body>
 
-        <!-- Section d'introduction -->
-        <div class="intro-section">
+  <!-- HEADER -->
+  <section class="header-section">
 
-            <!-- Contenu textuel de l'introduction -->
+		<p style="position: absolute; top: 0px; left: 20px; font-family: Queensides;">A FautTrouverUnNomPourADA Project &copy;</p>
 
-            <div class="left">
-                <p style="font-family: 'Monoton', sans-serif; font-size: 65px; text-align: center; margin: 0; animation: slideDescend 2s ease-in-out; z-index: 5;">
-                    ADA CASTING
-                </p>
+		<!-- Navigation menu -->
+		<nav>
 
-                <div class="img-logo">
-                    <img src="assets/img/film_pellicle.jpg" alt="logo"/>
-                </div>
-               
-            </div>
-            <div class="right">
-            <div class="intro-content">
-                <h1>AdaCasting </h1> <!-- Titre principal -->
-                <h2>Where Your Role Finds its Ada-ctor ! </h2>
-            </div>
+			<ul>
 
+				<li><a href="index.html" style="color: #ffffff;">HOME</a></li>
+        <li><a href="model.html">MODEL</a></li>
 
-            <div class="intro-content_l"> <!-- Titre principal -->
-                <p>Cinema, a dimension where dreams come to life and every image tells a captivating story!</P>
-                    <p> It's a world where spotlights light up not only the screen, but also the hearts and minds of audiences the world over.</P>
-                </P> And its industry is a market that's not about to die, and you're about to make your mark in this lucrative industry!.</p> <!-- Description du projet -->
-            </div>
+			</ul>
 
-            </div>
-            <!-- Indicateur de défilement -->
-            <div class="scroll-down">
-                <p>↓ APPUIE ICI</p>
-            </div>
-        </div>
+		</nav>
+
+    <!-- Square containing the logo and company name -->
+    <div class="white-square">
     
-    
-    
-    
-    
-    
-        <!-- Le reste du contenu sera ajouté dans les étapes suivantes -->
-    
-        <!-- Section pour les caractéristiques d'un acteur réussi -->
-        <section class="actor-features">
+      <!-- Company Logo (Replace with your actual logo) -->
+      <img src="assets/img/logo_ai.png" alt="Company Logo" class="company-logo">
 
+      <!-- Company Name -->
+      <h1 style="animation: slideInFromLeft 2s ease-out;" class="company-name">ADAgency</h1>
+      <h3 style="font-family: 'Queensides'; z-index: 2; animation: slideInFromRight 2s ease-out;">Precision Casting Through Data Insight</h3>
 
-            <div class="left" style="flex: 0.8;margin-left: 50px;">
+    </div>
 
-                <p>Le monde incroyable du cinéma se démarque par sa diversité extraordinaire de genres, offrant ainsi aux acteurs une myriade de choix excitants à explorer!</p>
-                <p> Des émotions intenses des drames aux éclats de rire des comédies, en passant par l'adrénaline palpitante des films d'action, chaque genre offre une expérience unique pour les acteurs 🎬✨.</p>
-                <ul>
-                    <li><strong>17 genres différents ! </strong></li>
-                    <li><strong>Une dizaine de milliers de films répartis dans ces genres</strong></li>
-                    <li><strong>Et une industrie qui gravitent autour de 9 genres majeurs</strong></li>
-                </ul>
+    <!-- Scroll down button -->
+    <div class="scroll-down">
+      <p>↓ DISCOVER</p>
+    </div>
 
+		<p style="position: absolute; bottom: 0px; right: 20px; font-family: Queensides;">Image credit: 12019</p>
 
-            </div>
+  </section>
 
+  <!-- INTRODUCTION -->
+  <section id="intro">
 
-            <div class="right" >
+    <div class="section-title">OUR PLAYGROUND</div>
 
-                <h2 style="text-align: center;">Variété de Genre : Les genres majeurs du cinéma !</h2>
+    <!-- Doughnut chart section -->
+    <div class="full-obj" style="display: flex; align-items: center; justify-content: center;">
 
+      <div class="left-obj">
+        <canvas id="genre-donut" style="width: 500px; height: 500px;"></canvas>
+      </div>
 
-                <div class="doughnut">
+      <div class="right-obj" style="display: flex; align-items: center; justify-content: center;">
+        <p style="text-align: center;">
+          ADAgency stands at the forefront of the entertainment industry, leveraging a vast dataset comprising extensive movie and actor information. Our commitment lies in meticulously curating the perfect synergy between movie auditions and talented actors. Within our dataset, we encompass a rich diversity of movie genres, providing us with a unique edge in precision and versatility.
+          <br><br>
+          By harnessing the power of our comprehensive dataset, we strive to redefine the casting experience, making it not just a process but an art form that seamlessly connects actors with roles that truly resonate.
+        </p>
+      </div>
+      
+    </div>
 
-                    <canvas id="myChart"></canvas>
+    <div class="full-obj">
 
-                </div>
+      <p style="text-align: center;">
+        In the realm of cinema, characterised by cultural diversity, the boundaries between nations fade away, providing actors with a captivating journey. Each filming location adds a unique flavor, enhancing the skills of actors and expanding the horizons of the film industry.
+      </p>
 
-            </div>
-            
-            
+    </div>
 
-        </section>
+    <!-- Map section -->
+    <div class="full-obj">
+      <div id="map" style="width: 800px; height: 600px; margin: auto;"></div>
+    </div>
 
+  </section>
 
+  <!-- SEX ANALYSIS -->
+  <section id="sex">
 
+    <div class="section-title">GENDER ANALYSIS: WO(MEN) IN CINEMA</div>
 
-        <section class="Countriy-feature">
+    <!-- Wordcloud section -->
+    <div class="full-obj">
 
-            <div class="left" style="flex: 1.7">
+      <p style="text-align: justify;">
+        In the world of cinema, the roles and opportunities available to men and women often diverge. This distinction arises from factors like movie genres, cultural contexts, and the expectations surrounding gender roles. Across various film types and cultural landscapes, there exists a noticeable difference in the kinds of characters and chances offered to male and female actors. It's a complex interplay between storytelling in movies and societal beliefs about how men and women should be portrayed.
+        <br><br>
+        Here are the most common genres for men and women starring in either primary or secondary roles:
+      </p>
 
-                <h2>Le Monde du Cinéma en Carte : Une Diversité de Films Épars sur Tous les Continents</h2>
+    </div>
 
-                <div id="regions_div" style="width: 700px; height: 400px; margin: auto;">></div>
+    <div class="full-obj">
 
-            </div>
+      <div class="left-obj">
+        <img src="assets/img/pm.png" alt="" class="wordcloud">
+        <img src="assets/img/pf.png" alt="" class="wordcloud">
+      </div>
+
+      <div class="right-obj">
+        <img src="assets/img/sm.png" alt="" class="wordcloud">
+        <img src="assets/img/sf.png" alt="" class="wordcloud">
+      </div>
+
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        As you can see, movies starring men in either primary or secondary roles are usually more action and adventure-filled. However, this is simply a trend recognised in our data set of movies and actors, and ADAgency will also gladly welcome the most romantic of male actors and the most daredevil female actors!
+      </p>
+
+    </div>
+
+    <!-- Histogram section -->
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        Employing linear regression with cross-validation, our objective was to evaluate the influence of primary and secondary actors' gender on predicting movie revenue and IMDb ratings. The results yielded an intriguing observation: as indicated by the p-values (<b>0.227</b> for Revenue linear regression and <b>0.472</b> for IMDb rating linear regression), the gender of the secondary actor appears to have less statistical significance in predicting both movie revenue and IMDb ratings than the primary role gender. For the sake of visualisation, we will therefore focus only on the primary role gender.
+        <br><br>
+        Following matching treatment (male primary role) and control (female primary role) on various potential confounders (e.g., Year of release + Runtime + Award Wins + Award Nominations + Actor age), we proceeded to analyse the differences in IMDb ratings and revenue regarding the primary actor's gender across the most common movie genres.
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+      <canvas id="revenue_post_matching"></canvas>
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        From our matching analysis, it's evident that specific movie genres show varying revenue patterns based on the primary actor's gender. Generally, films with a female lead tend to yield lower revenue across most genres, notably in Crime Fiction, Indie, or Mystery productions. However, there are exceptions, notably observed in Adventure or Family film productions, where the trend might differ.
+        <br><br>
+        However, it's crucial to emphasise that, especially within these genres, the margin of error in estimating revenue is significant, necessitating cautious interpretation before drawing definitive conclusions. Furthermore, the presence of unmatched or unobserved confounding factors could also potentially yield issues. 
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+      <canvas id="rating_post_matching"></canvas>
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        Regarding the IMDb rating, the error bars observed are notably less pronounced. A discernible trend emerges where, across all genres, movies featuring a female primary actor tend to receive slightly lower IMDb ratings compared to those with a male lead.
+        <br><br>
+        Whilst this distinction seems fairly consistent across genres, it's important to highlight that the presence of unmatched or unobserved confounding factors might contribute to potential issues, indicating the need for cautious interpretation of any conclusive findings due to the inherent uncertainties in the data.
+        <br><br>
+        Alright, your biological characteristics clearly seem to influence your financial and critical success, but how about where you live?
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- COUNTRY ANALYSIS -->
+  <section id="country">
+
+    <div class="section-title">COSMOPOLITAN CANVAS</div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        ADAgency spans every continent, with a marked presence in 24 countries around the world. As part of a study to determine the ideal country for actors committing to our company, our statistical engineers undertook an in-depth analysis. The study involved a sample of 10,000 films, covering a variety of genres and from 24 different countries.
+        <br><br>
+        The researchers began their analysis by examining revenue distribution trends in each country, seeking to establish meaningful comparisons of revenue trends in the film industry. Statistical tests, such as the Shapiro test, were used to assess the normality of the revenue distribution by country.
+        <br><br>
+        Statistical tests revealed that none of the countries' revenues follow a normal distribution, rejecting the hypothesis across all nations. Subsequent non-parametric Kruskal-Wallis tests aimed to identify significant differences in revenue distributions between countries. Results indicated a small group — Germany, Australia, and the United States, with similar revenue distributions or at least not significantly different ones. The remaining countries exhibited significant differences. ADAgency utilised this analysis to advise clients on the most favourable countries for a successful career.
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+
+      <div class="left-obj">
+        <img src="assets/img/yaniss1.png" alt="h" width="500" height="300">
+      </div>
+
+      <div class="right-obj">
         
-            <div class="right" style="margin-left: 20px;">
+        <p style="text-align: center;">
+          The ranking identified the United States, Australia, and Germany as the most profitable countries, showing no significant differences in a Kruskal-Wallis test. These countries also had the highest median income. The remaining countries, with significant differences and lower median incomes, included the United Kingdom, Canada, Hong Kong, Japan, France, Spain, Korea, Italy, and India, as illustrated in the boxplot graph. This study was vital for advising our clients on the most lucrative markets for their careers.
+        </p>
 
+      </div>
 
+    </div>
 
-                <p>La sphère cinématographique, riche en diversité culturelle, transcende les frontières nationales pour offrir aux acteurs une expérience captivante.</p>
+    <div class="full-obj">
 
-                <p>Chaque lieu de production contribue à une expérience distinctive, enrichissant le répertoire des acteurs et élargissant les horizons de l'industrie du cinéma. 🌍🎥✨</p>
+      <p style="text-align: justify;">
+        These tests were therefore also accompanied by a look at criticism across these countries. The aim was also to support our customers, who are looking for validation from the public and critics in addition to money and wealth.
+      </p>
 
-                <ul>
-                    <li><strong> 25 pays ! </strong></li>
-                    <li><strong>4 acteurs majeurs !</strong></li>
-                
-                </ul>
+    </div>
 
-                </div>
+    <div class="full-obj">
 
-            </div>
+      <div class="left-obj">
 
+        <p style="text-align: center;">
+          Indeed, put one on top of the other, researchers at ADAgency seemed to observe an inverse correlation between revenues generated in a country and critics in that same country. To avoid any doubt, the engineers tried to analyse these correlations in a somewhat naive way. 
+          As expected, no correlation emerged from these tests.
+        </p>
 
-        </section>
+      </div>
 
-        <section class="decades-feature">
+      <div class="right-obj">
+        <img src="assets/img/yaniss2.png" alt="h" width="500" height="300">
+      </div>
 
-            <div class="left">
+    </div>
 
-            <h2>Exploration Cinématographique Année par Année : Une Pléthore de Choix Cinématographiques !</h2>
-            <p>Le monde incroyable du cinéma se démarque par sa diversité extraordinaire de genres, offrant ainsi aux acteurs une myriade de choix excitants à explorer!</p>
-            <p> Des émotions intenses des drames aux éclats de rire des comédies, en passant par l'adrénaline palpitante des films d'action, chaque genre offre une expérience unique pour les acteurs 🎬✨.</p>
-            <ul>
-                <li><strong>17 genres différents ! </strong></li>
-                <li><strong>Une dizaine de milliers de films répartis dans ces genres</strong></li>
-                <li><strong>Et une industrie qui gravitent autour de 9 genres majeurs</strong></li>
-            </ul>
+    <!-- Heatmap section -->
+    <div class="full-obj">
 
-        </div>            
+      <p style="text-align: justify;">
+        Genre preference is a crucial factor in each country. To guide our clients effectively, it's essential to align players with local market preferences. Our engineers analysed film genre preferences by country using heatmaps, revealing insightful trends to help direct players based on specific countries.
+      </p>
 
+    </div>
 
-            <div class="right" >
+    <div class="full-obj">
 
-                <h2 style="text-align: center;">Les films à travers les décennies !</h2>
+      <div class="left-obj">
+        <div id="proportion-map" style="height: 400px; width: 400px;"></div>
+      </div>
 
+      <div class="right-obj">
 
-                <div class="bar-container">
+        <p style="text-align: center;">
+          The most striking trends are the clear dominance of the drama genre in all countries. Thrillers, comedy-adventure and action films are also fairly common genres, but less so than drama. What is interesting, therefore, is to see the genre preferences by country, with, for example, a more pronounced attraction to musicals and romantic films in India, and a strong interest in action and adventure films in Hong Kong. Horror films, family fantasy and mystery films are genres that occur less frequently than others in all countries.
+        </p>
 
-                    <canvas id="barChart"></canvas>
-                </div> 
+      </div>
 
+    </div>
 
-            </div>
-            
+    <div class="full-obj">
 
-        </section>
+      <p style="text-align: justify;">
+        But let's now look at what kind of film is profitable or rates high by genre and by country to really know where to direct our actors.
+      </p>
 
-    
-    
+    </div>
 
+    <div class="full-obj">
 
+      <div class="left-obj">
+        <div id="revenue-map" style="height: 400px; width: 400px;"></div>
+      </div>
 
-  
+      <div class="right-obj">
+        <div id="rating-map" style="height: 400px; width: 400px;"></div>
+      </div>
 
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        For revenues, a notable trend is that countries generating the most revenue overall, such as the USA, UK, Australia, and Canada, also lead in revenue across various film genres. Conversely, lower-revenue countries like India show consistently lower revenues across genres. Regarding specific genres, independent films, typically lower-budget and not aimed at blockbuster success, exhibit lower revenues. Despite cinema market dominance, dramatic films don't generate the highest revenues; instead, science fiction and family films surpass them in earnings.
+        <br><br>
+        Horror films generally receive lower ratings across countries, with Canada, the USA, the UK, and India showing similar ratings.
+        Drama, Mystery, Romance, and Indie Thriller consistently receive high ratings globally.
+        Successful countries, like the USA and Australia, tend to excel in various genres, while countries with lower overall income, such as India, show less uniform success across genres. Dramatic films receive widespread appreciation and critical acclaim.
+        Country-specific trends include Hong Kong's strength in Crime Thriller and Thriller genres, Korea's talent for crime thrillers, and Japan's proficiency in musical dramas, family films, crime fiction, and crime thrillers.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- ETHNICITY ANALYSIS -->
+  <section id="ethnicity">
+
+    <div class="section-title">WHERE DO YOU COME FROM? WHERE ARE YOU HEADED?</div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        At ADAgency, we prioritise analysing cast diversity to determine key factors for an actor's success. To address the question of what contributes to success, our data analysts studied how diversity influences movie revenues and ratings. Despite the complexity of quantifying diversity, exacerbated by globalisation, our specialists developed a novel numerical estimation method for ethnicities. By examining co-occurrences and applying a unique transformation, we can map ethnicities onto a plane for comprehensive analysis.
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+      <canvas id="scatter-distances"></canvas>
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        The central position of the 'White' ethnicity is due to its predominant representation, accounting for nearly 60% of all movies. The American and European industries, being the most influential, exhibit a tendency to select 'White' actors for both primary and secondary roles.
+        <br><br>
+        However, we observe that some ethnicities tend to get closer to that behemoth, majorly driven by the Asian continent. Bollywood has known a big evolution these last decades as well as Japanese and Chinese sectors. This tendency can also be shown when graphing the evolution of diversity through the years.
+      </p>
+
+    </div>
+
+    </div>
+
+    <div class="full-obj">
+      <canvas id="ethnicity-distances"></canvas>
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        Now let's dive into what made you visit our website: The quest of glory and fame. If we take a look at the revenues and IMDb rating based on the ethnicities, we can try to answer our initial question:
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+
+      <div class="left-obj">
+        <canvas id="revenue-vs-distance" height="300" width="400"></canvas>
+      </div>
+
+      <div class="right-obj">
+        <canvas id="rating-vs-distance" height="300" width="400"></canvas>
+      </div>
+
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        A 95% confidence interval was employed to gauge the uncertainty of mean values. Regarding revenues, precise predictions are possible when casting involves exactly the same ethnicity for primary and secondary roles (distance 0). As cast diversity increases, revenues tend to rise, but the widening confidence interval reduces accuracy with fewer available data points. Notably, peaks in revenue align with the presence of 'White' actors. In contrast, ratings hover around 6.0, with a potential upward trend at higher distances, though limited data availability may influence this observation.
+        <br><br>
+        We've provided an overview of global diversity in movies. Our primary aim is to identify the most suitable pair of ethnicities. Thus, we focus on realistic and robust data, particularly from the most represented ethnicities in our dataset: 'White' and 'South Asian' individuals. Together, they constitute nearly 85% of all movies in the dataset, yielding the most consistent results in average revenue and movie ratings.
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+
+      <div class="left-obj">
+        <img src="assets/img/rev_dist_white_sa.png" alt="h" width="400">
+      </div>
+
+      <div class="right-obj">
+        <img src="assets/img/rat_dist_white_sa.png" alt="h" width="400">
+      </div>
+
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        Comparing 'White' and 'South Asian' ethnicities reveals significant differences. 'White' ethnicities generally yield higher revenues, as confirmed by the confidence interval, emphasizing the importance of having a 'White' actor for box office success. In contrast, ratings suggest that for actors aiming to create historic movies, ethnicity carries less weight, providing more flexibility in choosing secondary actors, at least for 'White' and 'South Asian' categories.
+        <br><br>
+        Turning attention to revenues, we will exclusively examine the significance of the role in the movie for 'White' actors, as 'South Asian' actors do not exhibit any specific tendency.
+      </p>
+
+    </div>
+
+    <div class="full-obj" style="display: flex; align-items: center; justify-content: center;">
+
+      <div class="left-obj">
+        <img src="assets/img/rev_dist_white_roles.png" alt="h" width="400">
+      </div>
+
+      <div class="right-obj" style="display: flex; align-items: center; justify-content: center;">
+
+        <p style="text-align: center;">
+          An interesting aspect of the 'White' ethnicity emerges: when playing the lead role, pairing with an 'American Indian/Alaska Native' secondary actor is lucrative. In contrast, for a supporting role, pairing with an 'East Asian' actor proves advantageous.
+          <br><br>
+          However, are these trends universally applicable? ADAgency, concerned about both your future and past, delves deeper into the evolution of the movie industry across decades. By examining shifts in public taste, we aim to provide insights into which genres you should focus on for your career.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- DECADE ANALYSIS -->
+  <section id="decade">
+
+    <div class="section-title">A CHRONOLOGICAL APPROACH</div>
+
+    <!-- Movies by decade section -->
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        The cinematic industry stands as a testament to evolution, constantly shifting and transforming across the years. This dynamic realm of storytelling and visual artistry has continuously evolved, embracing technological advancements, societal changes, and artistic innovations. Following our preprocessing here are what we are working with:
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+      <canvas id="movies-per-decade"></canvas>
+    </div>
+
+    <div class="full-obj">
+      <canvas id="revenue-rating-by-decade"></canvas>
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        The revenue figures show variations across different decades, indicating fluctuations in the industry's financial performance over time. The 1960s and 1970s appear to be the most lucrative decades, with significantly higher average annual revenues compared to the surrounding decades. The 1940s also show a notably high average annual revenue, following a period that spans the end of the Great Depression and the wartime years, potentially reflecting a surge in cinema attendance during that time.
+        <br><br>
+        The IMDb rating figure shows variations across different decades, showcasing how critics' opinions have evolved over time. Over numerous decades, critical ratings exhibit a notable consistency, generally hovering within a narrow band of 6.3 to 6.8. Despite this stability, there's a slight downward trend in ratings as time progresses. Was cinema really that much better before?!
+        <br><br>
+        However, it's important to note that these figures likely represent averages and may not capture the full scope of the industry's complexities. The fluctuations could be influenced by various factors, including economic conditions, technological advancements, the popularity of specific genres, or the introduction of new entertainment mediums impacting cinema attendance.
+      </p>
+
+    </div>
+
+    <!-- Revenue and rating by genre by decade section -->
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        Genres within cinema often rise, fall, and transform, mirroring cultural trends and the ever-changing tastes of audiences. New genres emerge as innovative narratives and storytelling methods evolve, sometimes blending existing genres or introducing entirely novel concepts. Simultaneously, certain genres might fade into obscurity as they lose relevance or fail to resonate with contemporary audiences.
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+      <canvas id="revenue-linechart"></canvas>
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        Over the years, timeless genres like drama, romance, adventure, comedy, and action maintain a consistent presence among the primary genres. However, starting from the 60s, the drama genre gradually declines, becoming one of the least financially lucrative genres among the principal ones.
+        <br><br>
+        During the 60s, adventure and action genres dominate as top earners, marking a golden era. The 70s witness a peak in the popularity of comedy and romance genres. In contrast, the 80s witness the emergence of the thriller genre, which becomes a standalone top-earning category in the following years.
+        <br><br>
+        Interestingly, musicals experience a decline in financial success post their 80s heyday, struggling to generate revenue in the 90s and 2000s. Conversely, fantasy genres exhibit an opposite trend, gaining financial traction during this period.  
+      </p>
+
+    </div>
+
+    <div class="full-obj">
+      <canvas id="rating-linechart"></canvas>
+    </div>
+
+    <div class="full-obj">
+
+      <p style="text-align: justify;">
+        Similar to revenues, traditional cinema genres like drama, romance, adventure, comedy, and action persist as mainstays over the years, exhibiting consistent presence. Most genres share analogous trends among themselves, maintaining a relatively close pattern. However, a notable outlier emerges in horror movies, consistently rating approximately 0.5 lower than other genres in terms of IMDb ratings.
+        <br><br>
+        Interestingly, the thriller genre experiences a decline in ratings during the 90s, echoing its revenue behaviour from the preceding decade, which saw a decline following its success in the 80s.
+      </p>
+
+    </div>
+
+  </section>
+
+  <div class="full-obj">
+
+    <p style="text-align: center; font-size: 20px;">
+      <b>Now that you're aware of the factors to consider when choosing the type of movie to create and the level of success you aim for, if you have a movie idea and want to gauge its potential success, you're in for a treat! Our analysts have developed a model that forecasts the revenue and rating of your movie, considering the attributes of the lead, the supporting role, and the movie itself.</b>
+      <br><br>
+      <a href="model.html"><b>Try it yourself!</b></a>
+    </p>
+
+  </div>
+
+	<!-- FOOTER -->
+	<footer>
+
+		<p class="copyright">
+			Copyright ADAgency 2023 &copy; All rights reserved.
+		</p>
+
+	</footer>
 
 </body>
+
 
 </html>

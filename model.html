@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link the external CSS file -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles_model.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>ADAgency - Model</title>
+
+    <!-- leafletjs CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" />
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+		<!-- Link our JavaScript file -->
+		<script src="assets/js/script_model.js"></script>
+
+    <!-- Add the tab logo -->
+    <link rel="icon" href="assets/img/logo_ai.png" type="image/x-icon">
+
+</head>
+
+
+<body>
+
+  <!-- HEADER -->
+  <section class="header-section">
+
+		<p style="position: absolute; top: 0px; left: 20px; font-family: Queensides;">A FautTrouverUnNomPourADA Project &copy;</p>
+
+		<!-- Navigation menu -->
+		<nav>
+
+			<ul>
+
+				<li><a href="index.html">HOME</a></li>
+        <li><a href="model.html" style="color: #ffffff;">MODEL</a></li>
+
+			</ul>
+
+		</nav>
+
+    <!-- Square containing the logo and company name -->
+    <div class="white-square">
+    
+      <!-- Company Logo (Replace with your actual logo) -->
+      <img src="assets/img/logo_ai.png" alt="Company Logo" class="company-logo">
+
+      <!-- Company Name -->
+      <h1 style="animation: slideInFromLeft 2s ease-out;" class="company-name">ADAgency</h1>
+      <h3 style="font-family: 'Queensides'; z-index: 2; animation: slideInFromRight 2s ease-out;">Precision Casting Through Data Insight</h3>
+
+    </div>
+
+    <!-- Scroll down button -->
+    <div class="scroll-down">
+      <p>↓ MODEL ANALYSIS</p>
+    </div>
+
+		<p style="position: absolute; bottom: 0px; right: 20px; font-family: Queensides;">Image credit: 12019</p>
+
+  </section>
+
+	<!-- FORM -->
+	<section >
+        <div class="container-model">
+            <div class="form-model">
+
+                <h1>Rating Movie</h1>
+
+                <div class="line-inputs">
+                    <div class="input-form">
+                <label for="age"> Age </label>
+                <input type="number" placeholder="Age..." id="age" />
+                    </div>
+                    <div class="input-form">
+                <label for="height">Height (cm)</label>
+                <input type="number" placeholder="Enter height..."  id="height" />
+                    </div>
+                    </div>
+                <label for="language">Language</label>
+                <select id="language" name="language">
+                    <option value="English">English</option>
+                    <option value="Tamil">Tamil</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Malayalam">Malayalam</option>
+                    <option value="German">German</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="Korean">Korean</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Italian">Italian</option>
+                    <option value="French">French</option>
+                    <option value="Standard Mandarin">Standard Mandarin</option>
+                    <option value="Bengali">Bengali</option>
+                    <option value="Cantonese">Cantonese</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Russian">Russian</option>
+                    <option value="Portuguese">Portuguese</option>
+                    <option value="Urdu">Urdu</option>
+                    <option value="Arabic">Arabic</option>
+                    <option value="Tagalog">Tagalog</option>
+                    <option value="Swedish">Swedish</option>
+                </select>
+
+                <label for="ethnicity">Ethnicity</label>
+                <select id="ethnicity" name="ethnicity">
+                    <option value="White">White</option>
+                    <option value="Black/African American">Black/African American</option>
+                    <option value="South Asian">South Asian</option>
+                    <option value="East Asian">East Asian</option>
+                    <option value="American Indian/Alaska Native">American Indian/Alaska Native</option>
+                    <option value="Pacific Islander">Pacific Islander</option>
+                    <option value="Arab/Middle East">Arab/Middle East</option>
+                    <option value="Central and South Americans">Central and South Americans</option>
+                    <option value="Other">Other</option>
+                </select>
+
+
+                <label for="country">Country</label>
+               <select id="country" name="country">
+                    <option value="United States of America">United States of America</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="India">India</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Japan">Japan</option>
+                    <option value="South Korea">South Korea</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="France">France</option>
+                    <option value="Spain">Spain</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="Hong Kong">Hong Kong</option>
+                    <option value="China">China</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Italy">Italy</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Belgium">Belgium</option>
+                    <option value="Denmark">Denmark</option>
+                    <option value="Sweden">Sweden</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Philippines">Philippines</option>
+               </select>
+
+
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+
+                <label for="year">Release Year</label>
+                <input id="year" placeholder="Enter year..." />
+                <div class="action-form">
+                    <button id="submit-btn" onclick="openModal()">Submit</button>
+                </div>
+
+
+            </div>
+            <div>
+                <h3 id="title-result"></h3>
+                <h1 id="result"></h1>
+            </div>
+        </div>
+
+	</section>
+    <div id="myModal">
+        <div id="modalContent">
+            <div>
+                <div class="top-modal">
+                    <h2> Choose your subscription</h2>
+                    <span id="closeModal" onclick="closeModal()">&times;</span>
+                </div>
+                <div class="subscriptions-container">
+                    <div class="subscription-choice">
+                        <h3>9.00$</h3>
+                        <h4>STANDARD</h4>
+                        <p>Get your rating </p>
+                        <button id="submit-btn" onclick="callModelForest('rating')">Get Rating (~3s)</button>
+                    </div>
+                    <div class="subscription-choice">
+                        <h3>85.00$</h3>
+                        <h4>PREMIUM</h4>
+                        <p>Get your revenue </p>
+                        <button id="submit-btn" onclick="callModelForest('revenue')">Get Revenue (~4s)</button>
+                    </div>
+                     <div class="subscription-choice">
+                        <h3>999.00$</h3>
+                        <h4>TIME TRAVELER</h4>
+                        <p>Get release year to get 10/10 rating </p>
+                        <button id="submit-btn" onclick="callModelForest('release-year')">Get Release Year (~5s)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="full-obj">
+        <div class="section-title">CONCLUSION</div>
+    </div>
+
+    <div class="full-obj">
+
+        <p style="text-align: justify;">
+            As a visionary casting ADAgency, our in-depth exploration of cinematic data has shed light on essential facets of the film industry. Our mission was to uncover the secrets behind the scenes of every casting, to decipher the trends that make the difference between a resounding success and a cliché ending.
+            <br><br>
+            By scrutinizing the data, we uncovered a captivating reality: the choice of the lead role, particularly in terms of gender, proves to be a decisive factor in a film's success. Surprisingly, Adventure films with female leads seem to captivate audiences more than their male counterparts. So ladies, don't let stereotypes be an obstacle for your choice of movie genre.
+            <br><br>
+            Our survey also shed light on global box-office dynamics, revealing locations such as the USA and Australia as decisive grounds for cinematic success. At the same time, we observed varied trends by country, whether in terms of box-office receipts, movie ratings or genre preferences, providing an indispensable roadmap for choosing the ideal location for international casting.
+            <br><br>
+            Another crucial discovery lies in the power of diversity. A diverse cast proves to be the key to a rich and captivating work, attracting    both solid receipts and critical acclaim. However, it's essential to note that, while diversity adds a unique dimension, it also brings its share of uncertainties, as the numbers of movies studied were limited for highly diverse castings.
+            <br><br>
+            Finally, our casting model, the result of the dedication of our data analysts, has proved a reliable companion for crucial decisions. It offers solid indications for anticipating a film's critical or commercial success. But don't forget, as all models, even the one designed by our beloved specialists can make some errors. Even if we have taken all the features separately, a slight change in one of it can compromise deeply the algorithm that cannot handle these modifications. So, armed with this knowledge, the stage is now set for you. Dive into the world of cinema, explore unsuspected casting opportunities and let our ADAgency be your guide to the spotlight.
+        </p>
+    </div>
+
+	<!-- Next section -->
+	<footer>
+
+		<p class="copyright">
+			Copyright ADAgency 2023 &copy; All rights reserved.
+		</p>
+
+	</footer>
+
+</body>
+
+
+</html>
